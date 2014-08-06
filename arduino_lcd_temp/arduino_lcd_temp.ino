@@ -380,9 +380,9 @@ int getButtonPressed() {
   } else if (millisPressedKey == 0 && lcd_key != btnNONE) {
     millisPressedKey = now;
     return btnNONE;
-  } else if (((millisPressedKey + 20) < now) && (debounceTime < now)) {
+  } else if (((millisPressedKey + 10) < now) && (debounceTime < now)) {
     int lcd_key_confirm = read_LCD_buttons();
-    debounceTime = now + 200;
+    debounceTime = now + 300;
     millisPressedKey = 0;
     if (lcd_key == lcd_key_confirm) {
       //Serial.println(lcd_key);
